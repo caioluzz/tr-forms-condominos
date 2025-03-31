@@ -5,7 +5,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const FormHeader: React.FC = () => {
   const isMobile = useIsMobile();
-  
+
   return (
     <div className={`mb-6 md:mb-8 text-center animate-fade-in`}>
       <div className="inline-flex items-center justify-center mb-2">
@@ -13,10 +13,10 @@ const FormHeader: React.FC = () => {
         <span className={`${isMobile ? 'text-lg' : 'text-xl'} font-bold text-trenergia-blue`}>TR Energia</span>
       </div>
       <h1 className={`${isMobile ? 'text-xl' : 'text-2xl'} font-bold text-gray-800 mb-2`}>
-        Colaboradores TR Energia: 30% de desconto na sua conta de luz
+        Morador do Condomínio Maria do Carmo Alves tem até 20% de desconto na conta de luz!
       </h1>
       <p className="text-gray-600 text-balance text-sm md:text-base">
-      Preencha o formulário abaixo para receber sua proposta personalizada junto com o contrato para aproveitamento do desconto exclusivo.
+        Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.
       </p>
     </div>
   );

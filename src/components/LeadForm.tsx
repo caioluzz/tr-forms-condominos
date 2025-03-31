@@ -278,7 +278,7 @@ export function LeadForm() {
               <FileUpload
                 onChange={setFiles}
                 value={files}
-                description="Carregue uma foto ou PDF da sua conta de energia recente e seu documento oficial com foto."
+                description="Carregue uma foto ou PDF da sua conta de energia recente."
               />
             </Label>
           </div>
@@ -287,7 +287,7 @@ export function LeadForm() {
         <div className="bg-trenergia-gray/50 p-2 md:p-3 rounded-lg flex items-start space-x-2">
           <Shield className="w-4 h-4 text-trenergia-blue mt-0.5 flex-shrink-0" />
           <p className="text-xs text-gray-600">
-            Suas informações serão tratadas com confidencialidade e utilizadas exclusivamente para a elaboração da proposta e contrato de economia na conta de energia.
+            Suas informações serão tratadas com confidencialidade e utilizadas exclusivamente para a elaboração da proposta de economia na conta de energia.
           </p>
         </div>
 
@@ -305,7 +305,7 @@ export function LeadForm() {
               Processando...
             </span>
           ) : (
-            "Receber Minha Proposta e Contrato"
+            "Receber Minha Proposta"
           )}
         </Button>
       </form>

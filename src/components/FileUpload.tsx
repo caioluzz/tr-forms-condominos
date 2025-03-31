@@ -52,13 +52,13 @@ const FileUpload: React.FC<FileUploadProps> = ({ onChange, value, description })
   const handleFileChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
     console.log('Files selected:', files); // Log para debug
-    
+
     const validFiles = files.filter(validateFile);
     console.log('Valid files:', validFiles); // Log para debug
-    
+
     if (validFiles.length > 0) {
       const currentFiles = value || [];
-      const newFiles = [...currentFiles, ...validFiles].slice(0, 5);
+      const newFiles = [...currentFiles, ...validFiles].slice(0, 3);
       console.log('New files array:', newFiles); // Log para debug
       onChange(newFiles);
     }
@@ -71,13 +71,13 @@ const FileUpload: React.FC<FileUploadProps> = ({ onChange, value, description })
 
     const files = Array.from(e.dataTransfer.files);
     console.log('Dropped files:', files); // Log para debug
-    
+
     const validFiles = files.filter(validateFile);
     console.log('Valid dropped files:', validFiles); // Log para debug
-    
+
     if (validFiles.length > 0) {
       const currentFiles = value || [];
-      const newFiles = [...currentFiles, ...validFiles].slice(0, 5);
+      const newFiles = [...currentFiles, ...validFiles].slice(0, 3);
       console.log('New files array after drop:', newFiles); // Log para debug
       onChange(newFiles);
     }
@@ -110,7 +110,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onChange, value, description })
   return (
     <div className="space-y-1 md:space-y-2 w-full">
       <p className="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">{description}</p>
-      
+
       {(!value || value.length === 0) ? (
         <div
           className={cn(
@@ -162,7 +162,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onChange, value, description })
               </button>
             </div>
           ))}
-          {value.length < 5 && (
+          {value.length < 3 && (
             <div
               className={cn(
                 "dropzone flex flex-col items-center justify-center animate-fade-in",
@@ -193,7 +193,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onChange, value, description })
           )}
         </div>
       )}
-      
+
       {error && (
         <p className="text-xs md:text-sm text-red-500 mt-1 animate-slide-up">{error}</p>
       )}
