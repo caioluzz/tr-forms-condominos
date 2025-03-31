@@ -249,7 +249,7 @@ export function LeadForm() {
               <p className="text-xs md:text-sm text-red-500 animate-slide-up">{form.formState.errors.email.message}</p>
             )}
             <p className="text-xs text-gray-500">
-              Informe um endereço de e-mail válido.
+              Informe seu melhor endereço de e-mail..
             </p>
           </div>
 
@@ -278,7 +278,7 @@ export function LeadForm() {
               <FileUpload
                 onChange={setFiles}
                 value={files}
-                description="Carregue uma foto ou PDF da sua conta de energia recente."
+                description="Carregue um PDF ou uma foto legível da sua conta de energia mais recente."
               />
             </Label>
           </div>
