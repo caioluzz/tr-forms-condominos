@@ -1,8 +1,19 @@
-
 import React from 'react';
 import { CheckCircle, ArrowRight } from 'lucide-react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const SuccessMessage: React.FC = () => {
+  const navigate = useNavigate();
+  const { estabelecimento } = useParams();
+
+  const handleVoltar = () => {
+    if (estabelecimento) {
+      navigate(`/${estabelecimento}`);
+    } else {
+      navigate('/');
+    }
+  };
+
   return (
     <div className="animate-fade-in flex flex-col items-center justify-center py-8">
       <div className="w-16 h-16 mb-4 rounded-full bg-green-100 flex items-center justify-center">
@@ -26,13 +37,13 @@ const SuccessMessage: React.FC = () => {
         </p>
       </div>
 
-      <a
-        href="/"
+      <button
+        onClick={handleVoltar}
         className="mt-8 inline-flex items-center text-trenergia-blue hover:text-trenergia-lightblue transition-colors"
       >
         <span>Voltar para a página inicial</span>
         <ArrowRight className="ml-1 h-4 w-4" />
-      </a>
+      </button>
     </div>
   );
 };
