@@ -1,6 +1,5 @@
 import React from 'react';
-import { CheckCircle, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { CheckCircle } from 'lucide-react';
 
 interface SuccessMessageProps {
   estabelecimento?: string;
@@ -29,14 +28,6 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({ estabelecimento }) => {
           </span>
         </p>
       </div>
-
-      <Link
-        to={estabelecimento ? `/${estabelecimento}` : '/'}
-        className="mt-8 inline-flex items-center text-trenergia-blue hover:text-trenergia-lightblue transition-colors"
-      >
-        <span>Voltar para a página inicial</span>
-        <ArrowRight className="ml-1 h-4 w-4" />
-      </Link>
     </div>
   );
 };
