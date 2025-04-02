@@ -13,7 +13,7 @@ const FormHeader: React.FC = () => {
         <span className={`${isMobile ? 'text-lg' : 'text-xl'} font-bold text-trenergia-blue`}>TR Energia</span>
       </div>
       <h1 className={`${isMobile ? 'text-xl' : 'text-2xl'} font-bold text-gray-800 mb-2`}>
-        Morador do Condomínio Maria do Carmo Alves tem até 20% de desconto na conta de luz!
+        Cliente TR Energia tem até 20% de desconto na conta de energia!
       </h1>
       <p className="text-gray-600 text-balance text-sm md:text-base">
         Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.

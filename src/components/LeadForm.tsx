@@ -12,6 +12,16 @@ import FormHeader from './FormHeader';
 import SuccessMessage from './SuccessMessage';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { v4 as uuidv4 } from 'uuid';
+import { useParams } from 'react-router-dom';
+
+// Lista de estabelecimentos válidos
+const estabelecimentosValidos = [
+  'restaurante-paris',
+  'condominio-verde',
+  'hotel-central',
+  'padaria-nova',
+  'academia-fit'
+];
 
 const formSchema = z.object({
   name: z.string()
@@ -54,6 +64,9 @@ interface FormValues {
 export function LeadForm() {
   console.log('Ambiente:', import.meta.env.MODE);
   console.log('Webhook URL:', import.meta.env.VITE_WEBHOOK_URL);
+
+  const { estabelecimento } = useParams();
+  const estabelecimentoValido = estabelecimento && estabelecimentosValidos.includes(estabelecimento);
 
   const [files, setFiles] = useState<File[] | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -102,6 +115,10 @@ export function LeadForm() {
           formData.append(key, value);
         }
       });
+
+      // Adicionar a origem do lead
+      formData.append('origem', estabelecimentoValido ? estabelecimento : 'direto');
+      formData.append('data_cadastro', new Date().toISOString());
 
       // Adicionar os arquivos ao FormData
       files.forEach((file, index) => {
