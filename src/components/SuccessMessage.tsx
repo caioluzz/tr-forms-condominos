@@ -1,10 +1,13 @@
 import React from 'react';
 import { CheckCircle, ArrowRight } from 'lucide-react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const SuccessMessage: React.FC = () => {
+interface SuccessMessageProps {
+  estabelecimento?: string;
+}
+
+const SuccessMessage: React.FC<SuccessMessageProps> = ({ estabelecimento }) => {
   const navigate = useNavigate();
-  const { estabelecimento } = useParams();
 
   const handleVoltar = () => {
     if (estabelecimento) {

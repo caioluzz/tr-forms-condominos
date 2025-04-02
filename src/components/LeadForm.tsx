@@ -218,7 +218,7 @@ export function LeadForm() {
   };
 
   if (isSubmitted) {
-    return <SuccessMessage />;
+    return <SuccessMessage estabelecimento={estabelecimento} />;
   }
 
   return (
