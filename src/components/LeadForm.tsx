@@ -262,7 +262,7 @@ export function LeadForm() {
               <p className="text-xs md:text-sm text-red-500 animate-slide-up">{form.formState.errors.email.message}</p>
             )}
             <p className="text-xs text-gray-500">
-              Informe seu melhor endereço de e-mail..
+              Informe seu melhor endereço de e-mail.
             </p>
           </div>
 
