@@ -1,22 +1,12 @@
 import React from 'react';
 import { CheckCircle, ArrowRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface SuccessMessageProps {
   estabelecimento?: string;
 }
 
 const SuccessMessage: React.FC<SuccessMessageProps> = ({ estabelecimento }) => {
-  const navigate = useNavigate();
-
-  const handleVoltar = () => {
-    if (estabelecimento) {
-      navigate(`/${estabelecimento}`);
-    } else {
-      navigate('/');
-    }
-  };
-
   return (
     <div className="animate-fade-in flex flex-col items-center justify-center py-8">
       <div className="w-16 h-16 mb-4 rounded-full bg-green-100 flex items-center justify-center">
@@ -40,13 +30,13 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({ estabelecimento }) => {
         </p>
       </div>
 
-      <button
-        onClick={handleVoltar}
+      <Link
+        to={estabelecimento ? `/${estabelecimento}` : '/'}
         className="mt-8 inline-flex items-center text-trenergia-blue hover:text-trenergia-lightblue transition-colors"
       >
         <span>Voltar para a página inicial</span>
         <ArrowRight className="ml-1 h-4 w-4" />
-      </button>
+      </Link>
     </div>
   );
 };
