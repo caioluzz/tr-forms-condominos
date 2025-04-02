@@ -16,11 +16,7 @@ import { useParams } from 'react-router-dom';
 
 // Lista de estabelecimentos válidos
 const estabelecimentosValidos = [
-  'restaurante-paris',
-  'condominio-verde',
-  'hotel-central',
-  'padaria-nova',
-  'academia-fit'
+  'mariadocarmoalves'
 ];
 
 const formSchema = z.object({
