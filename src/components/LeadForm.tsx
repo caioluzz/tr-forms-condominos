@@ -17,7 +17,8 @@ import { useParams } from 'react-router-dom';
 // Lista de estabelecimentos válidos
 const estabelecimentosValidos = [
   'mariadocarmoalves',
-  'casagradedasubaias'
+  'casagradedasubaias',
+  'itaoca'
 ];
 
 const formSchema = z.object({
