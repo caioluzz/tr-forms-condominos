@@ -18,7 +18,8 @@ import { useParams } from 'react-router-dom';
 const estabelecimentosValidos = [
   'mariadocarmoalves',
   'casagradedasubaias',
-  'itaoca'
+  'itaoca',
+  'instagram'
 ];
 
 const formSchema = z.object({
